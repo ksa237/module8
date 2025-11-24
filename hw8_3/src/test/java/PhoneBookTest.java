@@ -1,0 +1,66 @@
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class PhoneBookTest {
+
+
+    @Test
+    void testAddMethod() {
+        PhoneBook phoneBook = new PhoneBook();
+
+        int result1 = phoneBook.add("Andrey", "89025523412");
+        assertEquals(1, result1, "Количество абонентов после добавления невеное");
+
+        int result2 = phoneBook.add("Marina", "89245556123");
+        assertEquals(2, result2, "Количество абонентов после добавления невеное");
+
+    }
+
+    @Test
+    void testfindByNumberMethod(){
+
+        PhoneBook phoneBook = new PhoneBook();
+
+        int result1 = phoneBook.add("Andrey", "89025523412");
+        int result2 = phoneBook.add("Marina", "89245556123");
+
+        String findName = phoneBook.findByNumber("89025523412");
+        String etalonName = "Andrey";
+
+        assertEquals(etalonName, findName, "Поиск по номеру телефона неуспешный");
+
+    }
+
+    @Test
+    void testfindByNameMethod(){
+
+        PhoneBook phoneBook = new PhoneBook();
+        int result1 = phoneBook.add("Andrey", "89025523412");
+        int result2 = phoneBook.add("Marina", "89245556123");
+
+        String findNumber = phoneBook.findByName("Marina");
+        String etalonNumber = "89245556123";
+
+        assertEquals(etalonNumber, findNumber , "Поиск по имени абонента неуспешный");
+
+    }
+
+    @Test
+    void testprintAllNamesMethod(){
+
+        PhoneBook phoneBook = new PhoneBook();
+
+        int result1 = phoneBook.add("Andrey", "89025523412");
+        int result2 = phoneBook.add("Marina", "89245556123");
+
+        boolean printResult = phoneBook.printAllNames();
+
+        assertTrue(printResult, "Печать списка контактов не выполнена");
+
+
+    }
+
+
+}
