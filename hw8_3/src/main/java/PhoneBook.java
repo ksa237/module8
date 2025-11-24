@@ -12,20 +12,25 @@ public class PhoneBook {
         return contacts.size();
     }
 
-    public String findByNumber(String phonenumber){
+    public String findByNumber(String phonenumber) {
         return numbers.get(phonenumber);
     }
 
 
-    public String findByName(String name){
+    public String findByName(String name) {
         return contacts.get(name);
     }
 
-    boolean printAllNames(){
-        return false;
+    boolean printAllNames() {
+
+        boolean isPrinted = false;
+        for (String name : contacts.values()) {
+            System.out.println(name);
+            isPrinted = true;
+        }
+        return isPrinted;
+
     }
-
-
 
 
 }
