@@ -4,9 +4,17 @@ public class PhoneBook {
 
     private TreeMap<String, String> contacts = new TreeMap<>();
 
+    private TreeMap<String, String> numbers = new TreeMap<>();
+
     public int add(String name, String phoneNumber) {
         contacts.put(name, phoneNumber);
+        numbers.put(phoneNumber, name);
         return contacts.size();
+    }
+
+
+    public String findByNumber(String phonenumber){
+        return null;
     }
 
 }
