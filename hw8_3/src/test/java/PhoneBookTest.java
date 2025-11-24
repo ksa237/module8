@@ -1,6 +1,10 @@
 import org.junit.jupiter.api.Test;
 
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.*;
 
 public class PhoneBookTest {
 
@@ -44,7 +48,19 @@ public class PhoneBookTest {
 
         assertEquals(etalonNumber, findNumber , "Поиск по имени абонента неуспешный");
 
+    }
 
+    @Test
+    void testprintAllNamesMethod(){
+
+        PhoneBook phoneBook = new PhoneBook();
+
+        int result1 = phoneBook.add("Andrey", "89025523412");
+        int result2 = phoneBook.add("Marina", "89245556123");
+
+        boolean printResult = phoneBook.printAllNames();
+
+        assertTrue(printResult, "Печать списка контактов не выполнена");
 
 
     }

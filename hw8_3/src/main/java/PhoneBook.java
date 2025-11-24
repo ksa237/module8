@@ -21,4 +21,11 @@ public class PhoneBook {
         return contacts.get(name);
     }
 
+    boolean printAllNames(){
+        return false;
+    }
+
+
+
+
 }
