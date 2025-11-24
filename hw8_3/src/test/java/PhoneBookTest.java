@@ -32,5 +32,22 @@ public class PhoneBookTest {
 
     }
 
+    @Test
+    void testfindByNameMethod(){
+
+        PhoneBook phoneBook = new PhoneBook();
+        int result1 = phoneBook.add("Andrey", "89025523412");
+        int result2 = phoneBook.add("Marina", "89245556123");
+
+        String findNumber = phoneBook.findByName("Marina");
+        String etalonNumber = "89245556123";
+
+        assertEquals(etalonNumber, findNumber , "Поиск по имени абонента неуспешный");
+
+
+
+
+    }
+
 
 }
