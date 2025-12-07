@@ -3,8 +3,12 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args) {
+
         Random random = new Random();
-        String text = generateText("abc", 3 + random.nextInt(3));
+        String[] texts = new String[100_000];
+        for (int i = 0; i < texts.length; i++) {
+            texts[i] = generateText("abc", 3 + random.nextInt(3));
+        }
 
     }
 
